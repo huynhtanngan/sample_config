@@ -5,14 +5,11 @@
 #ifndef _CONFIG_LOCAL_DATA_SOURCE_H_
 #define _CONFIG_LOCAL_DATA_SOURCE_H_
 
-
-#include <json/json.h>
 #include "config_data_source.h"
+#include "decryptor.h"
 
 class ConfigLocalDataSource : public ConfigDataSource {
-    std::unique_ptr<Json::Value> config;
-
-    void LoadDummyConfig();
+    std::unique_ptr<Decryptor> decryptor;
 
  public:
     ConfigLocalDataSource();
@@ -20,7 +17,6 @@ class ConfigLocalDataSource : public ConfigDataSource {
     ~ConfigLocalDataSource() override;
 
     std::string Get(const std::string &key) override;
-
 };
 
 

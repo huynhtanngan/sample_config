@@ -6,6 +6,8 @@
 #define _CONFIG_REPOSITORY_H_
 
 #include <string>
+
+#include <proto/config.pb.h>
 #include "config_data_source.h"
 
 class ConfigRepository {
